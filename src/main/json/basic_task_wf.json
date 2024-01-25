@@ -1,0 +1,46 @@
+{
+  "createTime": 1706194163497,
+  "updateTime": 1706191195876,
+  "accessPolicy": {},
+  "name": "basic_task_wf",
+  "description": "Edit or extend this sample workflow. Set the workflow name to get started",
+  "version": 1,
+  "tasks": [
+    {
+      "name": "basic_loop",
+      "taskReferenceName": "basic_loop_ref",
+      "inputParameters": {},
+      "type": "DO_WHILE",
+      "startDelay": 0,
+      "optional": false,
+      "asyncComplete": false,
+      "loopCondition": "if ($.basic_loop_ref['iteration'] < 10) {true;} else {false;}",
+      "loopOver": [
+        {
+          "name": "basic_task",
+          "taskReferenceName": "basic_task_ref",
+          "inputParameters": {
+            "request": "Request"
+          },
+          "type": "SIMPLE",
+          "startDelay": 0,
+          "optional": false,
+          "asyncComplete": false,
+          "permissive": false
+        }
+      ],
+      "evaluatorType": "graaljs",
+      "permissive": false
+    }
+  ],
+  "inputParameters": [],
+  "outputParameters": {},
+  "schemaVersion": 2,
+  "restartable": true,
+  "workflowStatusListenerEnabled": false,
+  "ownerEmail": "example@email.com",
+  "timeoutPolicy": "ALERT_ONLY",
+  "timeoutSeconds": 0,
+  "variables": {},
+  "inputTemplate": {}
+}

@@ -22,9 +22,16 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation
+	implementation 'org.springframework.boot:spring-boot-actuator'
+	implementation 'org.conductoross:conductor-common:3.16.0'
+	implementation 'org.conductoross:conductor-client:3.16.0'
+	implementation 'org.conductoross:conductor-client-spring:3.16.0'
+	implementation 'org.conductoross:conductor-java-sdk:3.16.0'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.3'
+	implementation 'com.sun.jersey:jersey-client:1.19.4'
+	implementation 'org.glassfish.jersey.core:jersey-common:2.22.2'
+	implementation 'javax.ws.rs:javax.ws.rs-api:2.1.1'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

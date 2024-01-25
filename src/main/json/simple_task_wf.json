@@ -1,0 +1,46 @@
+{
+  "createTime": 1706129896858,
+  "updateTime": 1706191195876,
+  "accessPolicy": {},
+  "name": "simple_task_wf",
+  "description": "Edit or extend this sample workflow. Set the workflow name to get started",
+  "version": 1,
+  "tasks": [
+    {
+      "name": "simple_loop",
+      "taskReferenceName": "simple_loop_ref",
+      "inputParameters": {},
+      "type": "DO_WHILE",
+      "startDelay": 0,
+      "optional": false,
+      "asyncComplete": false,
+      "loopCondition": "if ($.simple_loop_ref['iteration'] < 10) {true;} else {false;}",
+      "loopOver": [
+        {
+          "name": "spring_task",
+          "taskReferenceName": "simple_task_ref",
+          "inputParameters": {
+            "request": "Request"
+          },
+          "type": "SIMPLE",
+          "startDelay": 0,
+          "optional": false,
+          "asyncComplete": false,
+          "permissive": false
+        }
+      ],
+      "evaluatorType": "graaljs",
+      "permissive": false
+    }
+  ],
+  "inputParameters": [],
+  "outputParameters": {},
+  "schemaVersion": 2,
+  "restartable": true,
+  "workflowStatusListenerEnabled": false,
+  "ownerEmail": "example@email.com",
+  "timeoutPolicy": "ALERT_ONLY",
+  "timeoutSeconds": 0,
+  "variables": {},
+  "inputTemplate": {}
+}
